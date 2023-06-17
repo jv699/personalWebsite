@@ -10,10 +10,22 @@ body {
     background-color: bisque;
 }
 
-#nameHeading, h2 {
+h1, h2 {
     font-family: 'Major Mono Display', monospace;
+}
+
+#nameHeading {
+    width: 50%;
 }
 
 p {
     font-family: 'Roboto Mono', monospace;
+}
+
+#linkedin {
+    width: 45px;
+}
+
+#linkLogos {
+    float: right;
 }
