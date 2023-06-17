@@ -6,6 +6,14 @@ font-family: 'Roboto Mono', monospace;
 
 */
 
-h1 {
+body {
+    background-color: bisque;
+}
+
+#nameHeading, h2 {
     font-family: 'Major Mono Display', monospace;
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
 }
