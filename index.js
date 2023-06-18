@@ -12,14 +12,5 @@ const changeText = (thingToChange, textToChange) => {
     document.getElementById(thingToChange).innerHTML = textToChange;
 }
  
-const changeColor = (elementId, color) => {
-    document.getElementById(elementId).style.color = color;
-}
-
-const button = document.getElementById('hornyButton');
-const headings = document.getElementById('headings');
-
 const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
-
-button.onclick = () => changeColor(headings.id, 'red');

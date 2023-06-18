@@ -14,16 +14,21 @@ h1, h2 {
     font-family: 'Major Mono Display', monospace;
 }
 
-#nameHeading {
-    width: 50%;
-}
-
 p {
     font-family: 'Roboto Mono', monospace;
 }
 
+/* img:hover {
+    background-color: grey;
+} */
+
+#nameHeading {
+    width: 50%;
+}
+
 #linkedin {
     width: 45px;
+    margin-right: 10px;
 }
 
 #github {
@@ -32,5 +37,5 @@ p {
 
 #linkLogos {
     float: right;
-    margin-right: 15px;
+    margin-right: 25px;
 }
