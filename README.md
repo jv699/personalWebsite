@@ -1,2 +1,2 @@
 # First Personal Website
-First personal website using HTML, CSS, and JavaScript
+First personal website created using HTML, CSS, and JavaScript
