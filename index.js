@@ -11,6 +11,10 @@ const findAge = ((currentdate, birthDate) => {
 const changeText = (thingToChange, textToChange) => {
     document.getElementById(thingToChange).innerHTML = textToChange;
 }
+
+const fadeIn = (element => {
+    document.getElementById(element).
+});
  
 const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
