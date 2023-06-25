@@ -12,9 +12,6 @@ const changeText = (thingToChange, textToChange) => {
     document.getElementById(thingToChange).innerHTML = textToChange;
 }
 
-const showElement = (element) => {
-    setInterval(fadeIn(element), 200);
-};
 
 const fadeIn = (async element => {
     var opacity = Number(window.getComputedStyle(element).getPropertyValue('opacity'));
@@ -31,5 +28,4 @@ const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
 const aboutMe = document.getElementById('aboutMe');
-// showElement(aboutMe);
 fadeIn(aboutMe);
