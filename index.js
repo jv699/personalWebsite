@@ -12,9 +12,24 @@ const changeText = (thingToChange, textToChange) => {
     document.getElementById(thingToChange).innerHTML = textToChange;
 }
 
-const fadeIn = (element => {
-    document.getElementById(element).
+const showElement = (element) => {
+    setInterval(fadeIn(element), 200);
+};
+
+const fadeIn = (async element => {
+    var opacity = Number(window.getComputedStyle(element).getPropertyValue('opacity'));
+    console.log(opacity);
+
+    for(let i = .1; i < 1; i += .1){
+        element.style.opacity = i;
+        //this is basically sleep() and allows for proper timing on the fade in
+        await new Promise(r => setTimeout(r, 75));
+    }
 });
  
 const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
+
+const aboutMe = document.getElementById('aboutMe');
+// showElement(aboutMe);
+fadeIn(aboutMe);

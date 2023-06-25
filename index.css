@@ -19,6 +19,7 @@ h1, h2 {
 
 p {
     font-family: 'Roboto Mono', monospace;
+    opacity: 0;
 }
 
 /* img:hover {
