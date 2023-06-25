@@ -8,6 +8,9 @@ font-family: 'Roboto Mono', monospace;
 
 body {
     background-color: bisque;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 10px;
 }
 
 h1, h2 {
