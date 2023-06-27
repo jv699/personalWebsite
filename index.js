@@ -52,8 +52,7 @@ const slideUp = (async element => {
         element.style.top = `${(initalPosition.top + 20) - i/2}px`; 
         element.style.backgroundColor = `rgba(76, 55, 212, ${(i/200)})`;
         element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
-        //this allows me to slow the fade in as it gets closer to the finish
-        if (i >= 75)
+        if (i >= 75) //this allows me to slow the fade in as it gets closer to the finish making it appear smoother
             await new Promise(r => setTimeout(r, 10));
         else
             await new Promise(r => setTimeout(r, 1));
