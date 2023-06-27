@@ -5,6 +5,7 @@ const CUR_DATE = new Date();
 const BIRTH_DATE = new Date(99,10,6);
 
 //object for creating element positions, for movement
+// TODO refactor this mess, probably dont need it
 class Position {
     constructor(top, bottom, left, right) {
         this.top = top;
