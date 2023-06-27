@@ -38,14 +38,16 @@ const fadeIn = (async element => {
 const slideUp = (async element => {
     var initalPosition = element.getBoundingClientRect();
 
-        for (let i = 0; i <= 100; i++){
-            element.style.top = `${(initalPosition.top + 20) - i/2}px`; 
-            //this allows me to slow the fade in as it gets closer to the finish
-            if (i >= 75)
-                await new Promise(r => setTimeout(r, 10));
-            else
-                await new Promise(r => setTimeout(r, 1));
-        }
+    for (let i = 0; i <= 100; i++){
+        element.style.top = `${(initalPosition.top + 20) - i/2}px`; 
+        element.style.backgroundColor = `rgba(76, 55, 212, ${(i/200)})`;
+        element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
+        //this allows me to slow the fade in as it gets closer to the finish
+        if (i >= 75)
+            await new Promise(r => setTimeout(r, 10));
+        else
+            await new Promise(r => setTimeout(r, 1));
+    }
 });
 
 const ageSpan = document.getElementById('ageSpan');
