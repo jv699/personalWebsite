@@ -1,10 +1,19 @@
-// scripts come after where they're used    
-// TODO refactor into multiple files with imports and exports
+/*  scripts come after where they're used    
+    this is organized into sections, at least until I can get
+    modules working without throwing cross site scripting errors ¯\_(ツ)_/¯    
+    sections are:
+        - variables
+        - objects/classes
+        - functions
+        - 'main' part where code is run
+*/
+//TODO refactor into multiple files with imports and exports
 
+// VARIABLES
 const CUR_DATE = new Date();
 const BIRTH_DATE = new Date(99,10,6);
 
-//object for creating element positions, for movement
+// OBJECTS
 // TODO refactor this mess, probably dont need it
 class Position {
     constructor(top, bottom, left, right) {
@@ -15,6 +24,7 @@ class Position {
     }
 }
 
+// FUNCTIONS
 const findAge = ((currentdate, birthDate) => {
     var diffTime = Math.abs(currentdate - birthDate);
     var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -50,6 +60,7 @@ const slideUp = (async element => {
     }
 });
 
+// MAIN
 const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
