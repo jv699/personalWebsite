@@ -45,13 +45,15 @@ const fadeIn = (async element => {
     }
 });
  
-const slideUp = (async element => {
+const slideUp = (async (element, bUseBorder) => {
     var initalPosition = element.getBoundingClientRect();
 
     for (let i = 0; i <= 100; i++){
         element.style.top = `${(initalPosition.top + 20) - i/2}px`; 
-        element.style.backgroundColor = `rgba(76, 55, 212, ${(i/200)})`;
-        element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
+        element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
+        if (bUseBorder)
+            element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
+
         if (i >= 75) //this allows me to slow the fade in as it gets closer to the finish making it appear smoother
             await new Promise(r => setTimeout(r, 10));
         else
@@ -64,6 +66,7 @@ const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
 const aboutMe = document.getElementById('aboutMe');
+fadeIn(document.body);
 fadeIn(aboutMe);
 
-slideUp(aboutMe);
+slideUp(aboutMe, true);

@@ -7,10 +7,13 @@ font-family: 'Roboto Mono', monospace;
 */
 
 body {
-    background-color: bisque;
-    margin-left: 75px;
-    margin-right: 75px;
+    background-color:thistle;
+    margin-left: 115px;
     margin-top: 10px;
+}
+
+body, p {
+    margin-right: 115px;
 }
 
 h1, h2 {
@@ -21,8 +24,8 @@ p {
     font-family: 'Roboto Mono', monospace;
     opacity: 0;
     position: absolute;
-    margin-right: 75px;
-    border-color: black;
+    border: 3px solid;
+    border-color: rgba(0, 0, 0, 1);
 }
 
 #nameHeading {
