@@ -66,7 +66,8 @@ const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
 const aboutMe = document.getElementById('aboutMe');
+const bodyParagraphs = document.getElementById('bodyParagraphs');
 fadeIn(document.body);
-fadeIn(aboutMe);
+fadeIn(bodyParagraphs);
 
-slideUp(aboutMe, true);
+slideUp(bodyParagraphs, true);
