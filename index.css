@@ -6,13 +6,14 @@ font-family: 'Roboto Mono', monospace;
 
 */
 
+/* INDIVIDUAL ELEMENTS */
 body {
     background-color:thistle;
     margin-left: 115px;
     margin-top: 10px;
 }
 
-body, #bodyParagraphs {
+body, .bodyParagraphs {
     margin-right: 115px;
 }
 
@@ -22,15 +23,17 @@ h1, h2 {
 
 p {
     font-family: 'Roboto Mono', monospace;
-    opacity: 0;
 }
 
-#bodyParagraphs {
+/* CLASSES */
+.bodyParagraphs {
     position: absolute;
     border: 3px solid;
+    border-radius: 8px;
     border-color: rgba(0, 0, 0, 1);
 }
 
+/* IDs */
 #nameHeading {
     width: 50%;
 }
@@ -47,4 +50,11 @@ p {
 #linkLogos {
     float: right;
     margin-right: 25px;
+}
+
+#aboutMe {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

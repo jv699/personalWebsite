@@ -49,7 +49,7 @@ const slideUp = (async (element, bUseBorder) => {
     var initalPosition = element.getBoundingClientRect();
 
     for (let i = 0; i <= 100; i++){
-        element.style.top = `${(initalPosition.top + 20) - i/2}px`; 
+        element.style.top = `${(initalPosition.top + 50) - i/2}px`; 
         element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
         if (bUseBorder)
             element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
@@ -62,12 +62,18 @@ const slideUp = (async (element, bUseBorder) => {
 });
 
 // MAIN
+
+//code block for updating my age
 const ageSpan = document.getElementById('ageSpan');
 ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
+//getting elements to manipulate
 const aboutMe = document.getElementById('aboutMe');
-const bodyParagraphs = document.getElementById('bodyParagraphs');
-fadeIn(document.body);
-fadeIn(bodyParagraphs);
+const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
 
-slideUp(bodyParagraphs, true);
+//performing page load animations
+fadeIn(document.body);
+for (let i = 0; i < bodyParagraphs.length; i++) {
+    fadeIn(bodyParagraphs.item(i));
+    slideUp(bodyParagraphs.item(i));
+}
