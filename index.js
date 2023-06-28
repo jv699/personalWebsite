@@ -36,28 +36,32 @@ const changeText = (thingToChange, textToChange) => {
 }
 
 const fadeIn = (async element => {
-    var opacity = Number(window.getComputedStyle(element).getPropertyValue('opacity'));
+    if (element != null) {
+        var opacity = Number(window.getComputedStyle(element).getPropertyValue('opacity'));
 
-    for(let i = .1; i < 1; i += .1){
-        element.style.opacity = i;
-        //this is basically sleep() and allows for proper timing on the fade in
-        await new Promise(r => setTimeout(r, 75));
+        for(let i = .1; i < 1; i += .1){
+            element.style.opacity = i;
+            //this is basically sleep() and allows for proper timing on the fade in
+            await new Promise(r => setTimeout(r, 75));
+        }
     }
 });
  
 const slideUp = (async (element, bUseBorder) => {
-    var initalPosition = element.getBoundingClientRect();
+    if (element != null) {
+        var initalPosition = element.getBoundingClientRect();
 
-    for (let i = 0; i <= 100; i++){
-        element.style.top = `${(initalPosition.top + 50) - i/2}px`; 
-        element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
-        if (bUseBorder)
-            element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
+        for (let i = 0; i <= 100; i++){
+            element.style.top = `${(initalPosition.top + 50) - i/2}px`; 
+            element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
+            if (bUseBorder)
+                element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
 
-        if (i >= 75) //this allows me to slow the fade in as it gets closer to the finish making it appear smoother
-            await new Promise(r => setTimeout(r, 10));
-        else
-            await new Promise(r => setTimeout(r, 1));
+            if (i >= 85) //this allows me to slow the fade in as it gets closer to the finish making it appear smoother
+                await new Promise(r => setTimeout(r, 10));
+            else
+                await new Promise(r => setTimeout(r, 1));
+        }
     }
 });
 
@@ -65,7 +69,8 @@ const slideUp = (async (element, bUseBorder) => {
 
 //code block for updating my age
 const ageSpan = document.getElementById('ageSpan');
-ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
+if (ageSpan != null)
+    ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
 //getting elements to manipulate
 const aboutMe = document.getElementById('aboutMe');
@@ -76,5 +81,5 @@ fadeIn(document.body);
 //performs an animation for each element in the class '.bodyParagraphs'
 for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
-    slideUp(bodyParagraphs.item(i));
+    slideUp(bodyParagraphs.item(i), true);
 }

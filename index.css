@@ -3,6 +3,8 @@ These are the fonts I selected
 
 font-family: 'Major Mono Display', monospace;
 font-family: 'Roboto Mono', monospace;
+font-family: 'Belanosima', sans-serif;
+font-family: 'Quantico', sans-serif;
 
 */
 
@@ -18,8 +20,12 @@ body, .bodyParagraphs {
 }
 
 h1, h2 {
-    font-family: 'Major Mono Display', monospace;
+    font-family: 'Quantico', sans-serif;
 }
+
+/* h1 {
+    font-size: 50px;
+} */
 
 p {
     font-family: 'Roboto Mono', monospace;
@@ -50,6 +56,13 @@ p {
 #linkLogos {
     float: right;
     margin-right: 25px;
+    padding-top: 3px;
+}
+
+#linkBar {
+    float: right;
+    padding-right: 30px;
+    margin-bottom: 12px;
 }
 
 #aboutMe {
