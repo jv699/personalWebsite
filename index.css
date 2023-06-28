@@ -81,3 +81,11 @@ p {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+#aboutMeLink {
+    padding-right: 5px;
+}
+
+#homeLink {
+    padding-right: 6px;
+}
