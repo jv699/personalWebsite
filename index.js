@@ -73,6 +73,7 @@ const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
 
 //performing page load animations
 fadeIn(document.body);
+//performs an animation for each element in the class '.bodyParagraphs'
 for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
     slideUp(bodyParagraphs.item(i));
