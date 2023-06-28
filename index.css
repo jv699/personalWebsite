@@ -38,6 +38,16 @@ p {
     border-radius: 8px;
     border-color: rgba(0, 0, 0, 1);
 }
+ 
+.headerLinks {
+    text-decoration: none;
+    color:midnightblue;
+    transition: 0.3s;
+}
+
+.headerLinks:hover {
+    color:rgb(67, 67, 255)
+}
 
 /* IDs */
 #nameHeading {
