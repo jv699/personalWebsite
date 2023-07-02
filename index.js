@@ -88,6 +88,8 @@ const setSelectedLink = (pageTitle => {
         case CONTACT_PAGE:
             document.getElementById('contactLink').style.color = 'rgb(67, 67, 255)';
             break;
+        default:
+            break;
     }
 });
 
@@ -95,20 +97,20 @@ const setSelectedLink = (pageTitle => {
 ////////////////////////////
 // MAIN
 ////////////////////////////
+const ageSpan = document.getElementById('ageSpan');
+const aboutMe = document.getElementById('aboutMe');
+const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
+const pageTitle = document.title;
 
 //code block for updating my age
-const ageSpan = document.getElementById('ageSpan');
 if (ageSpan != null)
     ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
 //getting elements to manipulate
-const aboutMe = document.getElementById('aboutMe');
-const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
-const pageTitle = document.title;
+
 setSelectedLink(pageTitle);
 
-
-//performing page load animations, should happen after other logic
+//performing page load animations, !!!should happen after other logic!!!
 fadeIn(document.body);
 //performs an animation for each element in the class '.bodyParagraphs'
 for (let i = 0; i < bodyParagraphs.length; i++) {
