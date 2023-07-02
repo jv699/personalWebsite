@@ -10,7 +10,9 @@
 //TODO refactor into multiple files with imports and exports
 
 
+////////////////////////////
 // VARIABLES AND CONSTANTS
+////////////////////////////
 const CUR_DATE = new Date();
 const BIRTH_DATE = new Date(99,10,6);
 const HOME_PAGE = 'Home';
@@ -18,7 +20,9 @@ const ABOUT_ME_PAGE = 'About Me';
 const CONTACT_PAGE = 'Contact';
 
 
+////////////////////////////
 // OBJECTS
+////////////////////////////
 // TODO refactor this mess, probably dont need it
 class Position {
     constructor(top, bottom, left, right) {
@@ -30,7 +34,9 @@ class Position {
 }
 
 
+////////////////////////////
 // FUNCTIONS
+////////////////////////////
 const findAge = ((currentdate, birthDate) => {
     var diffTime = Math.abs(currentdate - birthDate);
     var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -71,12 +77,24 @@ const slideUp = (async (element, bUseBorder) => {
     }
 });
 
-const setSelectedLink = (pageTitle = () => {
-    if
+const setSelectedLink = (pageTitle => {
+    switch (pageTitle){
+        case 'Home':
+            console.log(pageTitle);
+            break;
+        case 'About Me': 
+            console.log(pageTitle);
+            break;
+        case 'Contact':
+            console.log(pageTitle);
+            break;
+    }
 });
 
 
+////////////////////////////
 // MAIN
+////////////////////////////
 
 //code block for updating my age
 const ageSpan = document.getElementById('ageSpan');
@@ -95,3 +113,5 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
     slideUp(bodyParagraphs.item(i), true);
 }
+
+setSelectedLink(pageTitle);
