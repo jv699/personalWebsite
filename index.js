@@ -79,14 +79,14 @@ const slideUp = (async (element, bUseBorder) => {
 
 const setSelectedLink = (pageTitle => {
     switch (pageTitle){
-        case 'Home':
-            console.log(pageTitle);
+        case HOME_PAGE:
+            document.getElementById('homeLink').style.color = 'rgb(67, 67, 255)';
             break;
-        case 'About Me': 
-            console.log(pageTitle);
+        case ABOUT_ME_PAGE: 
+            document.getElementById('aboutMeLink').style.color = 'rgb(67, 67, 255)';
             break;
-        case 'Contact':
-            console.log(pageTitle);
+        case CONTACT_PAGE:
+            document.getElementById('contactLink').style.color = 'rgb(67, 67, 255)';
             break;
     }
 });
@@ -105,13 +105,13 @@ if (ageSpan != null)
 const aboutMe = document.getElementById('aboutMe');
 const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
 const pageTitle = document.title;
+setSelectedLink(pageTitle);
 
-//performing page load animations
+
+//performing page load animations, should happen after other logic
 fadeIn(document.body);
 //performs an animation for each element in the class '.bodyParagraphs'
 for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
     slideUp(bodyParagraphs.item(i), true);
 }
-
-setSelectedLink(pageTitle);
