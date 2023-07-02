@@ -9,9 +9,11 @@
 */
 //TODO refactor into multiple files with imports and exports
 
+
 // VARIABLES
 const CUR_DATE = new Date();
 const BIRTH_DATE = new Date(99,10,6);
+
 
 // OBJECTS
 // TODO refactor this mess, probably dont need it
@@ -23,6 +25,7 @@ class Position {
         this.right = right;
     }
 }
+
 
 // FUNCTIONS
 const findAge = ((currentdate, birthDate) => {
@@ -65,6 +68,7 @@ const slideUp = (async (element, bUseBorder) => {
     }
 });
 
+
 // MAIN
 
 //code block for updating my age
@@ -75,6 +79,7 @@ if (ageSpan != null)
 //getting elements to manipulate
 const aboutMe = document.getElementById('aboutMe');
 const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
+const pageTitle = document.title;
 
 //performing page load animations
 fadeIn(document.body);
@@ -83,3 +88,5 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
     slideUp(bodyParagraphs.item(i), true);
 }
+
+console.log(pageTitle);
