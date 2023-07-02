@@ -10,9 +10,12 @@
 //TODO refactor into multiple files with imports and exports
 
 
-// VARIABLES
+// VARIABLES AND CONSTANTS
 const CUR_DATE = new Date();
 const BIRTH_DATE = new Date(99,10,6);
+const HOME_PAGE = 'Home';
+const ABOUT_ME_PAGE = 'About Me';
+const CONTACT_PAGE = 'Contact';
 
 
 // OBJECTS
@@ -68,6 +71,10 @@ const slideUp = (async (element, bUseBorder) => {
     }
 });
 
+const setSelectedLink = (pageTitle = () => {
+    if
+});
+
 
 // MAIN
 
@@ -88,5 +95,3 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
     slideUp(bodyParagraphs.item(i), true);
 }
-
-console.log(pageTitle);
