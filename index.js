@@ -95,7 +95,6 @@ const setSelectedLink = (pageTitle => {
     }
 });
 
-
 ////////////////////////////
 // MAIN
 ////////////////////////////
@@ -104,6 +103,7 @@ const aboutMe = document.getElementById('aboutMe');
 const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
 const pageTitle = document.title;
 const pageHeading = document.getElementById('pageHeading');
+const footerDate = document.getElementById('footerDate');
 
 //code block for updating my age
 if (ageSpan != null)
@@ -122,3 +122,5 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
 }
 
 slideUp(pageHeading, false, false);
+
+footerDate.innerHTML = `${CUR_DATE}`;
