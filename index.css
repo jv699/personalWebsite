@@ -15,7 +15,7 @@ body {
     margin-top: 10px;
 }
 
-body, .bodyParagraphs {
+body /*.bodyParagraphs */ {
     margin-right: 115px;
 }
 
@@ -33,10 +33,13 @@ p {
 
 /* CLASSES */
 .bodyParagraphs {
-    position: absolute;
-    border: 3px solid;
+    /* this was set up for having a background and border, may need removed */
+    /* position: absolute; */
+    text-align: justify;
+    font-size: 20px;
+    /* border: 3px solid;
     border-radius: 8px;
-    border-color: rgba(0, 0, 0, 1);
+    border-color: rgba(0, 0, 0, 1); */
 }
  
 .headerLinks {
@@ -93,4 +96,8 @@ p {
 
 #pageHeading {
     font-size: 55px;
+}
+
+#personalPhoto {
+    width: 200px;
 }

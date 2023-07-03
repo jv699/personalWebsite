@@ -59,13 +59,14 @@ const fadeIn = (async element => {
     }
 });
  
-const slideUp = (async (element, bUseBorder) => {
+const slideUp = (async (element, bUseBackgroundColor, bUseBorder) => {
     if (element != null) {
         var initalPosition = element.getBoundingClientRect();
 
         for (let i = 0; i <= 100; i++){
             element.style.top = `${(initalPosition.top + 50) - i/2}px`; 
-            element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
+            if (bUseBackgroundColor)
+                element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
             if (bUseBorder)
                 element.style.borderColor = `rgba(0, 0, 0, ${(i/200)})`;
 
@@ -115,5 +116,5 @@ fadeIn(document.body);
 //performs an animation for each element in the class '.bodyParagraphs'
 for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
-    slideUp(bodyParagraphs.item(i), true);
+    slideUp(bodyParagraphs.item(i), false, false);
 }
