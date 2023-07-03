@@ -1,5 +1,5 @@
 /*
-These are the fonts I selected
+These are the fonts I selected from Google Fonts
 
 font-family: 'Major Mono Display', monospace;
 font-family: 'Roboto Mono', monospace;
@@ -99,5 +99,7 @@ p {
 }
 
 #personalPhoto {
+    float: left;
     width: 200px;
+    padding-right: 20px;
 }
