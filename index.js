@@ -61,10 +61,11 @@ const fadeIn = (async element => {
  
 const slideUp = (async (element, bUseBackgroundColor, bUseBorder) => {
     if (element != null) {
+        // element.style.position = 'absolute';
         var initalPosition = element.getBoundingClientRect();
 
         for (let i = 0; i <= 100; i++){
-            element.style.top = `${(initalPosition.top + 50) - i/2}px`; 
+            element.style.top = `${(initalPosition.top)- i/2}px`; 
             if (bUseBackgroundColor)
                 element.style.backgroundColor = `rgba(255, 255, 255, ${(i/300)})`;
             if (bUseBorder)
@@ -102,6 +103,7 @@ const ageSpan = document.getElementById('ageSpan');
 const aboutMe = document.getElementById('aboutMe');
 const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
 const pageTitle = document.title;
+const pageHeading = document.getElementById('pageHeading');
 
 //code block for updating my age
 if (ageSpan != null)
@@ -118,3 +120,5 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
     slideUp(bodyParagraphs.item(i), false, false);
 }
+
+slideUp(pageHeading, false, false);
