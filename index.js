@@ -18,6 +18,12 @@ const BIRTH_DATE = new Date(99,10,6);
 const HOME_PAGE = 'Home';
 const ABOUT_ME_PAGE = 'About Me';
 const CONTACT_PAGE = 'Contact';
+const ageSpan = document.getElementById('ageSpan');
+const aboutMe = document.getElementById('aboutMe');
+const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
+const pageTitle = document.title;
+const pageHeading = document.getElementById('pageHeading');
+const footerDate = document.getElementById('footerDate');
 
 
 ////////////////////////////
@@ -95,26 +101,20 @@ const setSelectedLink = (pageTitle => {
     }
 });
 
+
 ////////////////////////////
 // MAIN
 ////////////////////////////
-const ageSpan = document.getElementById('ageSpan');
-const aboutMe = document.getElementById('aboutMe');
-const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
-const pageTitle = document.title;
-const pageHeading = document.getElementById('pageHeading');
-const footerDate = document.getElementById('footerDate');
-
 //code block for updating my age
 if (ageSpan != null)
     ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
 
-//getting elements to manipulate
 
 setSelectedLink(pageTitle);
 
 //performing page load animations, !!!should happen after other logic!!!
 fadeIn(document.body);
+
 //performs an animation for each element in the class '.bodyParagraphs'
 for (let i = 0; i < bodyParagraphs.length; i++) {
     fadeIn(bodyParagraphs.item(i));
