@@ -27,7 +27,7 @@ const footerDate = document.getElementById('footerDate');
 
 
 ////////////////////////////
-// OBJECTS
+// CLASSES & OBJECTS
 ////////////////////////////
 // TODO refactor this mess, probably dont need it
 class Position {
@@ -149,4 +149,4 @@ slideUp(pageHeading, false, false);
 footerDate.innerHTML = `${CUR_DATE}`;
 
 let testArray = [];
-console.log(fibonacci(100, testArray));
+console.log(fibonacci(10, testArray));
