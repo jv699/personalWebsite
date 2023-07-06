@@ -101,6 +101,23 @@ const setSelectedLink = (pageTitle => {
     }
 });
 
+// recursive fibonacci algorithm, because I was bored I guess
+const fibonacci = ((limit, currentIteration, returnArray) => {
+    if (currentIteration == 0){
+        returnArray[0] = 1;
+        returnArray[1] = 1;
+        currentIteration = 2;
+    }
+
+    if(currentIteration < limit) {
+        returnArray[currentIteration] = returnArray[currentIteration - 1] + returnArray[currentIteration - 2];
+        currentIteration++;
+        fibonacci(limit, currentIteration, returnArray);
+    }
+
+    return returnArray;
+});
+
 
 ////////////////////////////
 // MAIN
@@ -124,3 +141,6 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
 slideUp(pageHeading, false, false);
 
 footerDate.innerHTML = `${CUR_DATE}`;
+
+// let testArray = []; fibonacci initalization
+// console.log(fibonacci(100, 0, testArray));
