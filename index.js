@@ -148,5 +148,5 @@ slideUp(pageHeading, false, false);
 
 footerDate.innerHTML = `${CUR_DATE}`;
 
-let fibonacciArray = [];
-console.log(fibonacci(10, fibonacciArray));
+// let fibonacciArray = [];
+// console.log(fibonacci(10, fibonacciArray));
