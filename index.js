@@ -111,7 +111,7 @@ const setSelectedLink = (pageTitle => {
 const fibonacci = ((limit, returnArray, currentIteration,) => {
     if (currentIteration == 0 || currentIteration == null){
         returnArray[0] = 1;
-        returnArray[1] = 1;
+        returnArray[1] = 1 ;
         currentIteration = 2;
     }
 
@@ -148,5 +148,5 @@ slideUp(pageHeading, false, false);
 
 footerDate.innerHTML = `${CUR_DATE}`;
 
-let testArray = [];
-console.log(fibonacci(10, testArray));
+let fibonacciArray = [];
+console.log(fibonacci(10, fibonacciArray));
