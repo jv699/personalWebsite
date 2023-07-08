@@ -34,6 +34,7 @@ p {
 footer {
     position: absolute;
     bottom: 15px;
+    margin-left: 12%;
 }
 
 /* CLASSES */
@@ -52,6 +53,10 @@ footer {
 
 .headerLinks:hover {
     color:rgb(67, 67, 255);
+}
+
+.footerText {
+    float: left;
 }
 
 /* IDs */
