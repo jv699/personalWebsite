@@ -55,24 +55,6 @@ footer {
     color:rgb(67, 67, 255);
 }
 
-.footerParent{
-    font-family: arial;
-    font-size: 24px;
-    margin: 25px;
-    width: 350px;
-    height: 200px;
-    outline: dashed 1px black;
-    /* Center child horizontally*/
-    display: flex;
-    justify-content: center;
-}
-
-.footerChild{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-}
-
 /* IDs */
 #nameHeading {
     margin-left: 15px;
@@ -125,4 +107,13 @@ footer {
     float: left;
     width: 200px;
     padding-right: 20px;
+}
+
+#footer {
+    /* display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; */
+    width: 100%;
+    margin: auto 0;
 }

@@ -24,6 +24,7 @@ const bodyParagraphs = document.getElementsByClassName('bodyParagraphs');
 const pageTitle = document.title;
 const pageHeading = document.getElementById('pageHeading');
 const footerDate = document.getElementById('footerDate');
+const footerDIV = document.getElementById('footer');
 
 
 ////////////////////////////
@@ -129,8 +130,9 @@ const fibonacci = ((limit, returnArray, currentIteration,) => {
 // MAIN
 ////////////////////////////
 //code block for updating my age
-if (ageSpan != null)
-    ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old `;
+if (ageSpan != null){
+    ageSpan.innerHTML = ` • ${findAge(CUR_DATE, BIRTH_DATE)} year old`;
+}
 
 
 setSelectedLink(pageTitle);
@@ -146,7 +148,10 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
 
 slideUp(pageHeading, false, false);
 
+// the centering needs done after the script is ran, otherwise it wont be centered
 footerDate.innerHTML = `${CUR_DATE}`;
+footerDIV.style.width = '100%';
+footerDIV.style.margin = 'auto 0';
 
 // let fibonacciArray = [];
 // console.log(fibonacci(10, fibonacciArray));
