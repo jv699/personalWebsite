@@ -110,10 +110,8 @@ footer {
 }
 
 #footer {
-    /* display: table;
+    display: table;
     text-align: center;
     margin-left: auto;
-    margin-right: auto; */
-    width: 100%;
-    margin: auto 0;
+    margin-right: auto;
 }

@@ -102,6 +102,20 @@ const setSelectedLink = (pageTitle => {
     }
 });
 
+const codeAnimation = (async pageHeading => { 
+    pageHeading.innerHTML = "";
+    const pageHeadingArray = pageHeading.textContent.split("");
+    let animatedArray = [];
+    for(let i = 0; pageHeadingArray.length; i++){
+        pageHeading.innerHTML = animatedArray.toString();
+        await new Promise(r => setTimeout(r, 10));
+        // animatedArray[i + 1] = "█";
+        animatedArray[i + 1] = "p";
+        animatedArray = pageHeadingArray[i];
+    }
+    pageHeading.innerHTML = animatedArray.toString();
+});
+
 /**
  * Recursive fobonacci algorithm
  * @param  {Number} limit how many numbers you want generated
@@ -131,7 +145,7 @@ const fibonacci = ((limit, returnArray, currentIteration,) => {
 ////////////////////////////
 //code block for updating my age
 if (ageSpan != null){
-    ageSpan.innerHTML = ` • ${findAge(CUR_DATE, BIRTH_DATE)} year old`;
+    ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old`;
 }
 
 
@@ -148,10 +162,15 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
 
 slideUp(pageHeading, false, false);
 
-// the centering needs done after the script is ran, otherwise it wont be centered
-footerDate.innerHTML = `${CUR_DATE}`;
-footerDIV.style.width = '100%';
-footerDIV.style.margin = 'auto 0';
+footerDate.innerHTML = ` • ${CUR_DATE.getFullYear()}`;
+// footerDIV.style.width = '100%';
+// footerDIV.style.margin = 'auto 0';
+
+// console.log(test);
+// console.log(test.textContent);
+// console.log(test.textContent.split(""));
+
+codeAnimation(pageHeading);
 
 // let fibonacciArray = [];
 // console.log(fibonacci(10, fibonacciArray));
