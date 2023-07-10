@@ -103,15 +103,15 @@ const setSelectedLink = (pageTitle => {
 });
 
 const codeAnimation = (async pageHeading => { 
-    pageHeading.innerHTML = "";
     const pageHeadingArray = pageHeading.textContent.split("");
+    pageHeading.innerHTML = "";
     let animatedArray = [];
     for(let i = 0; pageHeadingArray.length; i++){
         pageHeading.innerHTML = animatedArray.toString();
         await new Promise(r => setTimeout(r, 10));
-        // animatedArray[i + 1] = "█";
-        animatedArray[i + 1] = "p";
-        animatedArray = pageHeadingArray[i];
+        animatedArray[i + 1] = "█";
+        // animatedArray[i + 1] = "p";
+        animatedArray += pageHeadingArray[i];
     }
     pageHeading.innerHTML = animatedArray.toString();
 });
