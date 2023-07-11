@@ -5,6 +5,7 @@ font-family: 'Major Mono Display', monospace;
 font-family: 'Roboto Mono', monospace;
 font-family: 'Belanosima', sans-serif;
 font-family: 'Quantico', sans-serif;
+font-family: 'Source Code Pro', monospace;
 
 */
 
@@ -20,7 +21,7 @@ body, .bodyParagraphs {
 }
 
 h1, h2 {
-    font-family: 'Quantico', sans-serif;
+    font-family: 'Source Code Pro', monospace;
 }
 
 /* h1 {
@@ -59,6 +60,7 @@ footer {
 #nameHeading {
     margin-left: 15px;
     width: 50%;
+    font-size: 35px;
 }
 
 #linkedin {

@@ -117,14 +117,14 @@ const codeAnimation = (async pageHeading => {
     for(let i = 0; i <= pageHeadingArray.length; i++){
         pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
         await new Promise(r => setTimeout(r, 200));
-        animatedArray[i] = pageHeadingArray[i].toString();
-        if (i != pageHeadingArray.length){
+        if (pageHeadingArray[i] != null)
+            animatedArray[i] = pageHeadingArray[i].toString();
+        if (i < pageHeadingArray.length - 1)    
             animatedArray[i+1] = '█';
-        }
-        else {
-            pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
-        }
     }
+
+    blinkingCursor(pageHeading);
+
 });
 
 /**
@@ -134,11 +134,13 @@ const codeAnimation = (async pageHeading => {
  */
 const blinkingCursor = (async (elementToBlink, length) => {
     if (length == null) length = 100000;
+    let originalText = elementToBlink.textContent;
+    let textWithCursor = originalText + '█';
 
     for(let i = 0; i < length; i++){
-        elementToBlink.innerHTML = '█';
+        elementToBlink.innerHTML = textWithCursor;
         await new Promise(r => setTimeout(r, 500));
-        elementToBlink.innerHTML = '';
+        elementToBlink.innerHTML = originalText;
         await new Promise(r => setTimeout(r, 500));
     }
 })
@@ -190,12 +192,6 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
 slideUp(pageHeading, false, false);
 
 footerDate.innerHTML = ` • ${CUR_DATE.getFullYear()}`;
-// footerDIV.style.width = '100%';
-// footerDIV.style.margin = 'auto 0';
-
-// console.log(test);
-// console.log(test.textContent);
-// console.log(test.textContent.split(""));
 
 codeAnimation(pageHeading);
 
