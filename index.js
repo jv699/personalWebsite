@@ -102,12 +102,17 @@ const setSelectedLink = (pageTitle => {
     }
 });
 
+/**
+ * Function to add a terminal-like effect to a text element
+ * @param {element} pageHeading HTML element to add effect to
+ */
 const codeAnimation = (async pageHeading => { 
     const pageHeadingArray = pageHeading.textContent.split("");
     pageHeading.innerHTML = "";
     let animatedArray = [''];
 
     //have blinking function call here
+    await blinkingCursor(pageHeading, 3); //await is done in order, blocking if you will
 
     for(let i = 0; i <= pageHeadingArray.length; i++){
         pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
@@ -125,7 +130,7 @@ const codeAnimation = (async pageHeading => {
 /**
  * Funtion for adding a blinking cursor to the end of an element.
  * @param {element} elementToBlink Element to add blinking to
- * @param {number} length Length of time you want the blinking to occur. if none is given, it blinks 100,00 times
+ * @param {number} length Length of time, in seconds, you want the blinking to occur. if none is given, it blinks 100,000 times
  */
 const blinkingCursor = (async (elementToBlink, length) => {
     if (length == null) length = 100000;
