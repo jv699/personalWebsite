@@ -104,16 +104,23 @@ const setSelectedLink = (pageTitle => {
 
 const codeAnimation = (async pageHeading => { 
     const pageHeadingArray = pageHeading.textContent.split("");
+    console.log(pageHeadingArray);
     pageHeading.innerHTML = "";
-    let animatedArray = [];
-    for(let i = 0; pageHeadingArray.length; i++){
+    let animatedArray = ['█'];
+
+    for(let i = 0; i < 3; i++){
+        pageHeading.innerHTML = '';
+        await new Promise(r => setTimeout(r, 500));
+        pageHeading.innerHTML = '█';
+        await new Promise(r => setTimeout(r, 500));
+    }
+
+    for(let i = 0; i < pageHeadingArray.length; i++){
+        console.log(animatedArray);
         pageHeading.innerHTML = animatedArray.toString();
-        await new Promise(r => setTimeout(r, 10));
-        animatedArray[i + 1] = "█";
-        // animatedArray[i + 1] = "p";
+        await new Promise(r => setTimeout(r, 500));
         animatedArray += pageHeadingArray[i];
     }
-    pageHeading.innerHTML = animatedArray.toString();
 });
 
 /**
