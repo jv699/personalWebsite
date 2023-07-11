@@ -122,11 +122,18 @@ const codeAnimation = (async pageHeading => {
     }
 });
 
+/**
+ * Funtion for adding a blinking cursor to the end of an element.
+ * @param {element} elementToBlink Element to add blinking to
+ * @param {number} length Length of time you want the blinking to occur. if none is given, it blinks 100,00 times
+ */
 const blinkingCursor = (async (elementToBlink, length) => {
-    for(let i = 0; i < 3; i++){
-        pageHeading.innerHTML = '█';
+    if (length == null) length = 100000;
+
+    for(let i = 0; i < length; i++){
+        elementToBlink.innerHTML = '█';
         await new Promise(r => setTimeout(r, 500));
-        pageHeading.innerHTML = '';
+        elementToBlink.innerHTML = '';
         await new Promise(r => setTimeout(r, 500));
     }
 })
