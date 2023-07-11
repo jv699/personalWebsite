@@ -104,24 +104,32 @@ const setSelectedLink = (pageTitle => {
 
 const codeAnimation = (async pageHeading => { 
     const pageHeadingArray = pageHeading.textContent.split("");
-    console.log(pageHeadingArray);
     pageHeading.innerHTML = "";
-    let animatedArray = ['█'];
+    let animatedArray = [''];
 
-    for(let i = 0; i < 3; i++){
-        pageHeading.innerHTML = '';
-        await new Promise(r => setTimeout(r, 500));
-        pageHeading.innerHTML = '█';
-        await new Promise(r => setTimeout(r, 500));
-    }
+    //have blinking function call here
 
-    for(let i = 0; i < pageHeadingArray.length; i++){
-        console.log(animatedArray);
-        pageHeading.innerHTML = animatedArray.toString();
-        await new Promise(r => setTimeout(r, 500));
-        animatedArray += pageHeadingArray[i];
+    for(let i = 0; i <= pageHeadingArray.length; i++){
+        pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
+        await new Promise(r => setTimeout(r, 200));
+        animatedArray[i] = pageHeadingArray[i].toString();
+        if (i != pageHeadingArray.length){
+            animatedArray[i+1] = '█';
+        }
+        else {
+            pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
+        }
     }
 });
+
+const blinkingCursor = (async (elementToBlink, length) => {
+    for(let i = 0; i < 3; i++){
+        pageHeading.innerHTML = '█';
+        await new Promise(r => setTimeout(r, 500));
+        pageHeading.innerHTML = '';
+        await new Promise(r => setTimeout(r, 500));
+    }
+})
 
 /**
  * Recursive fobonacci algorithm
