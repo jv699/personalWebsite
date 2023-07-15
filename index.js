@@ -177,6 +177,8 @@ const performPageLoadAnimations = (async () => {
     await codeAnimation(pageHeading);
     setSelectedLink(pageTitle);
     for (let i = 0; i < bodyParagraphs.length; i++) {
+        bodyParagraphs.item(i).style.display = 'block';
+        console.log(bodyParagraphs.item(i));
         fadeIn(bodyParagraphs.item(i));
         slideUp(bodyParagraphs.item(i), false, false);
     }

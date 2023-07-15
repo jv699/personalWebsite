@@ -40,6 +40,7 @@ footer {
 
 /* CLASSES */
 .bodyParagraphs {
+    display: none;
     position: absolute;
     margin-top: 70px;
     text-align: justify;
@@ -102,7 +103,7 @@ footer {
 #pageHeading {
     font-size: 55px;
     position: absolute;
-    margin-top: 25px;
+    margin-top: 1px;
 }
 
 #personalPhoto {
