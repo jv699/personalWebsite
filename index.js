@@ -131,7 +131,7 @@ const codeAnimation = (async (pageHeading) => {
 /**
  * Funtion for adding a blinking cursor to the end of an element.
  * @param {element} elementToBlink Element to add blinking to
- * @param {number} length Length of time, in seconds, you want the blinking to occur. if none is given, it blinks 100,000 times
+ * @param {number} length Length of time, in seconds, you want the blinking to occur. If none is given, it blinks 100,000 times
  */
 const blinkingCursor = (async (elementToBlink, length) => {
     if (length == null) length = 100000;
@@ -169,6 +169,18 @@ const fibonacci = ((limit, returnArray, currentIteration,) => {
     return returnArray;
 });
 
+/**
+ * Function which performs all of the animations on page load. 
+ * This function is asynchronus to allow some animations to happen in a specific sequence.
+ */
+const performPageLoadAnimations = (async () => {
+    await codeAnimation(pageHeading);
+    setSelectedLink(pageTitle);
+    for (let i = 0; i < bodyParagraphs.length; i++) {
+        fadeIn(bodyParagraphs.item(i));
+        slideUp(bodyParagraphs.item(i), false, false);
+    }
+})
 
 ////////////////////////////
 // MAIN
@@ -178,22 +190,10 @@ if (ageSpan != null){
     ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old`;
 }
 
-await codeAnimation(pageHeading);
-
-setSelectedLink(pageTitle);
+footerDate.innerHTML = ` • ${CUR_DATE.getFullYear()}`;
 
 //performing page load animations, !!!should happen after other logic!!!
-fadeIn(document.body);
-
-//performs an animation for each element in the class '.bodyParagraphs'
-for (let i = 0; i < bodyParagraphs.length; i++) {
-    fadeIn(bodyParagraphs.item(i));
-    slideUp(bodyParagraphs.item(i), false, false);
-}
-
-slideUp(pageHeading, false, false);
-
-footerDate.innerHTML = ` • ${CUR_DATE.getFullYear()}`;
+performPageLoadAnimations();
 
 // let fibonacciArray = [];
 // console.log(fibonacci(10, fibonacciArray));
