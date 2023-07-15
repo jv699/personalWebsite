@@ -113,11 +113,11 @@ const codeAnimation = (async pageHeading => {
     let animatedArray = [''];
 
     //have blinking function call here
-    await blinkingCursor(pageHeading, 3); //await is done in order, blocking if you will
+    await blinkingCursor(pageHeading, 2); //await is done in order, blocking if you will
 
     for(let i = 0; i <= pageHeadingArray.length; i++){
         pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
-        await new Promise(r => setTimeout(r, 200));
+        await new Promise(r => setTimeout(r, 120));
         if (pageHeadingArray[i] != null)
             animatedArray[i] = pageHeadingArray[i].toString();
         if (i < pageHeadingArray.length - 1)    
