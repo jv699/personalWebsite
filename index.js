@@ -26,6 +26,7 @@ const pageTitle = document.title;
 const pageHeading = document.getElementById('pageHeading');
 const footerDate = document.getElementById('footerDate');
 const footerDIV = document.getElementById('footer');
+const bodyContent = document.getElementsByClassName('bodyContent');
 
 
 ////////////////////////////
@@ -178,7 +179,6 @@ const performPageLoadAnimations = (async () => {
     setSelectedLink(pageTitle);
     for (let i = 0; i < bodyParagraphs.length; i++) {
         bodyParagraphs.item(i).style.display = 'block';
-        console.log(bodyParagraphs.item(i));
         fadeIn(bodyParagraphs.item(i));
         slideUp(bodyParagraphs.item(i), false, false);
     }
