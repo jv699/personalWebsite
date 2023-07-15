@@ -107,13 +107,13 @@ const setSelectedLink = (pageTitle => {
  * Function to add a terminal-like effect to a text element
  * @param {element} pageHeading HTML element to add effect to
  */
-const codeAnimation = (async pageHeading => { 
+const codeAnimation = (async (pageHeading) => { 
     const pageHeadingArray = pageHeading.textContent.split("");
     pageHeading.innerHTML = "";
     let animatedArray = [''];
 
     //have blinking function call here
-    await blinkingCursor(pageHeading, 2); //await is done in order, blocking if you will
+    await blinkingCursor(pageHeading, 1); //await is done in order, blocking if you will
 
     for(let i = 0; i <= pageHeadingArray.length; i++){
         pageHeading.innerHTML = animatedArray.toString().replaceAll(',', '');
@@ -178,6 +178,7 @@ if (ageSpan != null){
     ageSpan.innerHTML = `${findAge(CUR_DATE, BIRTH_DATE)} year old`;
 }
 
+await codeAnimation(pageHeading);
 
 setSelectedLink(pageTitle);
 
@@ -193,8 +194,6 @@ for (let i = 0; i < bodyParagraphs.length; i++) {
 slideUp(pageHeading, false, false);
 
 footerDate.innerHTML = ` • ${CUR_DATE.getFullYear()}`;
-
-codeAnimation(pageHeading);
 
 // let fibonacciArray = [];
 // console.log(fibonacci(10, fibonacciArray));
