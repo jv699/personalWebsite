@@ -8,6 +8,7 @@
         - 'main' part where code is run
 */
 //TODO refactor into multiple files with imports and exports
+// I really want to use this as the cursor, but it keeps moving the heading up and down - █
 
 
 ////////////////////////////
@@ -120,7 +121,7 @@ const codeAnimation = (async pageHeading => {
         if (pageHeadingArray[i] != null)
             animatedArray[i] = pageHeadingArray[i].toString();
         if (i < pageHeadingArray.length - 1)    
-            animatedArray[i+1] = '█';
+            animatedArray[i+1] = '|';
     }
 
     blinkingCursor(pageHeading);
@@ -135,7 +136,7 @@ const codeAnimation = (async pageHeading => {
 const blinkingCursor = (async (elementToBlink, length) => {
     if (length == null) length = 100000;
     let originalText = elementToBlink.textContent;
-    let textWithCursor = originalText + '█';
+    let textWithCursor = originalText + '|';
 
     for(let i = 0; i < length; i++){
         elementToBlink.innerHTML = textWithCursor;

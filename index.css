@@ -101,8 +101,8 @@ footer {
 
 #pageHeading {
     font-size: 55px;
-    position: absolute;
-    margin-top: 25px;
+    /* position: absolute; */
+    /* margin-top: 55px; */
 }
 
 #personalPhoto {
