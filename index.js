@@ -154,10 +154,10 @@ const blinkingCursor = (async (elementToBlink, length) => {
  * @param  {Number} currentIteration current iteration, needs to be 0 or null
  * @return {Array} the array with the fibonacci numbers
  */
-const fibonacci = ((limit, returnArray, currentIteration,) => {
+const fibonacci = ((limit, returnArray, currentIteration) => {
     if (currentIteration == 0 || currentIteration == null){
         returnArray[0] = 1;
-        returnArray[1] = 1 ;
+        returnArray[1] = 1;
         currentIteration = 2;
     }
 
@@ -198,4 +198,4 @@ footerDate.innerHTML = ` • ${CUR_DATE.getFullYear()}`;
 performPageLoadAnimations();
 
 // let fibonacciArray = [];
-// console.log(fibonacci(10, fibonacciArray));
+// console.log(fibonacci(100, fibonacciArray));
