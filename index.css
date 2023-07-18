@@ -113,8 +113,15 @@ footer {
 }
 
 #footer {
-    display: table;
+    /* display: table;
     text-align: center;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
+    margin-right: 0px;
+}
+
+#footerWrapper {
+    width:100%;
+    position:fixed;
+    bottom: 0px;
 }
